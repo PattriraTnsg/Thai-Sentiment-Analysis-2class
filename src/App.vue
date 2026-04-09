@@ -118,6 +118,7 @@ const checkReview = async () => {
     try {
       const res = await fetch(`${apiUrl.value}${ep}`, {
         signal: AbortSignal.timeout(8000),
+        headers: { 'ngrok-skip-browser-warning': '1' },
       });
       if (res.status < 500) {
         consecutiveFails = 0;
@@ -184,7 +185,10 @@ const sendMessage = async () => {
     try {
       const res = await fetch(`${apiUrl.value}/predict`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'ngrok-skip-browser-warning': '1',
+        },
         body: JSON.stringify({ text }),
         signal: AbortSignal.timeout(15000),
       });
