@@ -274,7 +274,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  max-width: 820px;
+  max-width: 1440px;
   margin: 0 auto;
   background: #FFFDF5;
   box-shadow: 0 0 40px rgba(0,0,0,0.12);

@@ -130,6 +130,7 @@ const getLabelClass = (key: string) => {
 .message-content {
   line-height: 1.65;
   font-size: 0.95rem;
+  text-align: left;
 }
 .timestamp {
   font-size: 0.68rem;
@@ -141,11 +142,11 @@ const getLabelClass = (key: string) => {
 /* ── Sentiment Card ───────────────── */
 .sentiment-card {
   background: white;
-  border-radius: 14px;
-  padding: 12px 16px;
+  border-radius: 12px;
+  padding: 8px 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   border-left: 4px solid #ccc;
-  min-width: 240px;
+  min-width: 200px;
   max-width: 100%;
 }
 .sentiment-card.positive { border-color: #27AE60; }
@@ -154,10 +155,10 @@ const getLabelClass = (key: string) => {
 .sentiment-header {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 10px;
+  gap: 6px;
+  margin-bottom: 6px;
 }
-.sentiment-emoji { font-size: 1.4rem; }
+.sentiment-emoji { font-size: 1.1rem; }
 .sentiment-label {
   font-family: 'Noto Serif Thai', serif;
   font-weight: 700;
@@ -176,16 +177,16 @@ const getLabelClass = (key: string) => {
 }
 
 /* Probability bars */
-.prob-bars { display: flex; flex-direction: column; gap: 6px; }
+.prob-bars { display: flex; flex-direction: column; gap: 4px; }
 .prob-row {
   display: grid;
-  grid-template-columns: 100px 1fr 45px;
+  grid-template-columns: 80px 1fr 40px;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 .prob-label { font-size: 0.78rem; color: #7D6451; white-space: nowrap; }
 .prob-bar-track {
-  height: 8px;
+  height: 6px;
   background: #F0EAE0;
   border-radius: 4px;
   overflow: hidden;
