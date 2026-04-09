@@ -44,7 +44,7 @@ const isTesting = ref(false);
 const isNgrok = (url: string) => url.includes('ngrok');
 
 const testConnection = async (url: string): Promise<boolean> => {
-  const endpoints = ['/health', '/review', '/predict'];
+  const endpoints = ['/health', '/predict'];
   for (const ep of endpoints) {
     try {
       const res = await fetch(`${url}${ep}`, {

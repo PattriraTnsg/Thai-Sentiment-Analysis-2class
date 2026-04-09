@@ -97,7 +97,7 @@ const inputText     = ref('');
 const isTyping      = ref(false);
 const chatContainer = ref<HTMLElement | null>(null);
 const inputRef      = ref<HTMLTextAreaElement | null>(null);
-let reviewInterval: number;
+let HealthInterval: number;
 
 const suggestions = [
   'อาหารอร่อยมาก บริการดีเยี่ยม แนะนำเลย!',
@@ -111,9 +111,9 @@ const suggestions = [
 let consecutiveFails = 0;
 const FAIL_THRESHOLD = 3;
 
-const checkReview = async () => {
+const checkHealth = async () => {
   if (!apiUrl.value) return;
-  const endpoints = ['/health', '/review'];
+  const endpoints = ['/health'];
   for (const ep of endpoints) {
     try {
       const res = await fetch(`${apiUrl.value}${ep}`, {
@@ -244,14 +244,14 @@ onMounted(() => {
   const saved = localStorage.getItem('api_url');
   if (saved) {
     apiUrl.value = saved;
-    checkReview();
+    checkHealth();
   } else {
     isModalOpen.value = true;
   }
-  reviewInterval = window.setInterval(checkReview, 20000);
+  HealthInterval = window.setInterval(checkHealth, 20000);
 });
 
-onUnmounted(() => clearInterval(reviewInterval));
+onUnmounted(() => clearInterval(HealthInterval));
 </script>
 
 <style>
